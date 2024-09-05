@@ -1,0 +1,376 @@
+/* Universal styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Most common styles */
+
+.btn-blur {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-blur:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-nature {}
+
+.simple-text-head {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    line-height: 32px;
+}
+
+.simple-text-description {
+    color: #474747;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: justify;
+}
+
+/* Body styles */
+
+body {}
+
+/* Header styles */
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 20px 0px #00000014;
+}
+
+/* Head-title styles */
+
+.head-title h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+/* Nav styles */
+
+.nav>ul {
+    display: flex;
+}
+
+.nav>ul>li {
+    list-style: none;
+    margin-right: 50px;
+}
+
+.nav>ul>li>a {
+    color: #228B22;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.nav>ul>li>a:hover {
+    text-decoration: underline;
+}
+
+/* Banner styles */
+.banner {
+    background-image: url(../assets/banner.webp);
+    background-size: cover;
+    height: 775px;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+/* Main styles */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.main-con {
+    display: grid;
+    grid-template-areas:
+        "about about about blog"
+        "about about about blog"
+    ;
+    gap: 20px;
+    letter-spacing: normal;
+}
+
+.about-con {
+    grid-area: about;
+}
+
+.blog-con {
+    grid-area: blog;
+}
+
+.blog-con hr {
+    height: 2px;
+    background: lightgray;
+    outline: none;
+    border-radius: 8px;
+    margin: 12px 0px;
+}
+
+
+/* Card-con */
+
+.card-con {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.card {
+    width: 360px;
+    height: 360px;
+    text-align: center;
+    box-shadow: 0px 0px 20px 0px #008b0045;
+    margin-bottom: 80%;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+}
+
+.card p {
+    text-align: center;
+}
+
+.card button {
+    background: transparent;
+    color: #228B22;
+    border: 1px solid #228B22;
+    outline: none;
+    padding: 20px 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.card button:hover {
+    background-color: #228B22;
+    color: #fff;
+}
+
+/* Footer styles */
+
+footer {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #228B22;
+    color: #fff;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    padding: 40px 100px;
+}
+
+.footer-column {
+    width: 50%;
+}
+
+.quick-links>ul {
+    display: flex;
+}
+
+.quick-links>ul>li {
+    list-style: none;
+}
+
+.quick-links>ul>li>a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.quick-links>ul>li>a:hover {
+    text-decoration: underline;
+}
+
+.form-column form input[type="email"],
+input[type="text"] {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 20px 40px 20px 30px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* Medium device */
+
+@media screen and (min-width: 771px) and (max-width:1030px) {
+    .card-con{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .main-con{
+        grid-template-areas: 
+        "about"
+        "blog"
+        ;
+    }
+    .blog-title h5{
+        text-align: center !important;
+    }
+    .blog-description p{
+        text-align: center !important;
+    }
+}
+
+/* Mobile device */
+
+@media screen and (max-width: 770px) {
+    body {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    header {
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .banner {
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 100px;
+    }
+
+    .btn-blur {
+        padding: 15px 30px;
+        font-size: 0.9rem;
+    }
+
+    .nav {
+        margin-left: 11%;
+        display: none;
+    }
+
+    .nav>ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav>ul>li {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .main-con {
+        grid-template-areas:
+            "about"
+            "blog"
+        ;
+    }
+
+    .card-con {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 80%;
+        text-align: center;
+    }
+
+    .simple-text-head {
+        font-size: 1.4rem;
+    }
+
+    .simple-text-description {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        height: 1000px;
+        width: 100%;
+    }
+
+    .footer {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .blog-title h5 {
+        text-align: center !important;
+    }
+
+    .blog-description p {
+        text-align: justify !important;
+    }
+    .quick-links > ul {
+        flex-direction: column;
+    }
+    .card button{
+        padding: 10px 20px;
+    }
+    .footer-column{
+        width: 100%;
+        text-align: center !important;
+    }
+    .footer-column > form > h3{
+        text-align: center !important;
+    }
+    .form-column form input[type="email"],
+    input[type="text"]{
+        width: 50%;
+        margin: 20px auto;
+    }
+    .about-us > h4{
+        text-align:center !important;
+    }
+    .about-us p{
+        text-align:center !important;
+    }
+    .quick-links > ul > li{
+        margin-bottom: 20px;
+    }
+}
